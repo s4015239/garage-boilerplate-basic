@@ -22,4 +22,15 @@ export interface UserProfile {
   _schemaVersion: 1
 }
 
+export interface Note {
+  id: string
+  uid: string
+  title: string
+  body: string
+  createdAt: Timestamp
+  updatedAt: Timestamp
+  _schemaVersion: 1
+}
+
 export type CreateUserProfileInput = Omit<UserProfile, 'createdAt' | 'updatedAt'>
+

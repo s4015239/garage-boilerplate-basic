@@ -39,7 +39,12 @@ export function useCollection<T extends DocumentData>(
     const unsubscribe = onSnapshot(
       q,
       (snapshot) => {
-        setData(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })) as T[])
+        setData(
+          snapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          })) as T[]
+        )
         setLoading(false)
       },
       (err) => {
